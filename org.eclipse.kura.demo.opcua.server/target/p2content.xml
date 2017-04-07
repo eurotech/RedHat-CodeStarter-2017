@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='2'>
+  <unit id='org.eclipse.kura.demo.opcua.server' version='1.0.0.201704071458' singleton='false'>
+    <update id='org.eclipse.kura.demo.opcua.server' range='[0.0.0,1.0.0.201704071458)' severity='0'/>
+    <properties size='4'>
+      <property name='org.eclipse.equinox.p2.name' value='Server'/>
+      <property name='maven-groupId' value='org.eclipse.kura'/>
+      <property name='maven-artifactId' value='org.eclipse.kura.demo.opcua.server'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+    </properties>
+    <provides size='3'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.kura.demo.opcua.server' version='1.0.0.201704071458'/>
+      <provided namespace='osgi.bundle' name='org.eclipse.kura.demo.opcua.server' version='1.0.0.201704071458'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='21'>
+      <required namespace='java.package' name='javax.security.cert' range='0.0.0'/>
+      <required namespace='java.package' name='javax.xml' range='0.0.0'/>
+      <required namespace='java.package' name='javax.xml.stream' range='0.0.0'/>
+      <required namespace='java.package' name='jdk.dio' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.adc' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.atcmd' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.dac' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.generic' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.gpio' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.i2cbus' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.modem' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.power' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.spi' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.spibus' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.uart' range='1.0.6'/>
+      <required namespace='java.package' name='jdk.dio.watchdog' range='1.0.6'/>
+      <required namespace='java.package' name='org.eclipse.kura' range='1.3.0'/>
+      <required namespace='java.package' name='org.eclipse.kura.configuration' range='1.1.1'/>
+      <required namespace='java.package' name='org.eclipse.kura.gpio' range='1.0.1'/>
+      <required namespace='java.package' name='org.slf4j' range='1.7.21'/>
+      <required namespace='java.package' name='sun.misc' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='org.eclipse.kura.demo.opcua.server' version='1.0.0.201704071458'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: org.eclipse.kura.demo.opcua.server&#xA;Bundle-Version: 1.0.0.201704071458&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+  <unit id='org.eclipse.kura.demo.opcua.server.source' version='1.0.0.201704071458' singleton='false'>
+    <update id='org.eclipse.kura.demo.opcua.server.source' range='[0.0.0,1.0.0.201704071458)' severity='0'/>
+    <properties size='9'>
+      <property name='df_LT.bundleVendor' value='unknown'/>
+      <property name='df_LT.bundleName' value='Server Source'/>
+      <property name='org.eclipse.equinox.p2.name' value='%bundleName'/>
+      <property name='org.eclipse.equinox.p2.provider' value='%bundleVendor'/>
+      <property name='org.eclipse.equinox.p2.bundle.localization' value='OSGI-INF/l10n/bundle-src'/>
+      <property name='maven-groupId' value='org.eclipse.kura'/>
+      <property name='maven-artifactId' value='org.eclipse.kura.demo.opcua.server'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      <property name='maven-classifier' value='sources'/>
+    </properties>
+    <provides size='4'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.kura.demo.opcua.server.source' version='1.0.0.201704071458'/>
+      <provided namespace='osgi.bundle' name='org.eclipse.kura.demo.opcua.server.source' version='1.0.0.201704071458'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='source' version='1.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.localization' name='df_LT' version='1.0.0'/>
+    </provides>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='org.eclipse.kura.demo.opcua.server.source' version='1.0.0.201704071458'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: org.eclipse.kura.demo.opcua.server.source&#xA;Bundle-Version: 1.0.0.201704071458&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>

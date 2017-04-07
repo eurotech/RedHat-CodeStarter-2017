@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="exec.jdeps"  >
+<target name="exec.jdeps" if="jdeps.present">
+  <echo message="Executing exec.jdeps step"/>
+  <apply executable="jdeps">
+    <arg value="-P"/>
+    <arg value="-dotoutput"/>
+    <arg value="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/target/logfiles"/>
+    <fileset dir="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/target">
+      <include name="*.jar"/>
+    </fileset>
+  </apply>
+  <fileset includes="*.dot" id="compact3.file" dir="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/target/logfiles" erroronmissingdir="false">
+    <contains text="compact3"/>
+  </fileset>
+  <fail message="Compact3 profile not allowed!">
+    <condition>
+      <resourcecount count="0" refid="compact3.file" when="greater"/>
+    </condition>
+  </fail>
+  <fileset includes="*.dot" id="fulljre.file" dir="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/target/logfiles" erroronmissingdir="false">
+    <contains text="Full JRE"/>
+  </fileset>
+  <fail message="Full JRE profile not allowed!">
+    <condition>
+      <resourcecount count="0" refid="fulljre.file" when="greater"/>
+    </condition>
+  </fail>
+</target>
+</project>

@@ -35,6 +35,8 @@ import org.eclipse.milo.opcua.stack.core.types.builtin.StatusCode;
 import org.eclipse.milo.opcua.stack.core.types.builtin.unsigned.UByte;
 import org.eclipse.milo.opcua.stack.core.types.builtin.unsigned.UShort;
 import org.eclipse.milo.opcua.stack.core.types.enumerated.NodeClass;
+import org.eclipse.milo.opcua.stack.core.types.enumerated.TimestampsToReturn;
+import org.eclipse.milo.opcua.stack.core.types.structured.ReadValueId;
 import org.eclipse.milo.opcua.stack.core.types.structured.WriteValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -94,7 +96,12 @@ public class DemoNamespace extends OpcUaNamespace {
     }
 
     @Override
-    public void write(WriteContext context, List<WriteValue> writeValues) {
+    public synchronized void read(ReadContext arg0, Double arg1, TimestampsToReturn arg2, List<ReadValueId> arg3) {
+        super.read(arg0, arg1, arg2, arg3);
+    }
+
+    @Override
+    public synchronized void write(WriteContext context, List<WriteValue> writeValues) {
         List<StatusCode> results = new ArrayList<StatusCode>(writeValues.size());
 
         for (WriteValue writeValue : writeValues) {
@@ -107,7 +114,7 @@ public class DemoNamespace extends OpcUaNamespace {
 
                     results.add(StatusCode.GOOD);
 
-                    logger.info("Wrote value {} to {} attribute of {}", writeValue.getValue().getValue(),
+                    logger.debug("Wrote value {} to {} attribute of {}", writeValue.getValue().getValue(),
                             AttributeId.from(writeValue.getAttributeId()).map(Object::toString).orElse("unknown"),
                             node.getNodeId());
                 } catch (UaException e) {

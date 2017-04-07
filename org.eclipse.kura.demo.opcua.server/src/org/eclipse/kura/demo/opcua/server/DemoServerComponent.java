@@ -3,24 +3,27 @@ package org.eclipse.kura.demo.opcua.server;
 import static org.eclipse.milo.opcua.sdk.server.api.config.OpcUaServerConfig.USER_TOKEN_POLICY_ANONYMOUS;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import org.eclipse.kura.configuration.ConfigurableComponent;
-import org.eclipse.kura.demo.opcua.server.gpio.GpioOutAttributeDelegate;
-import org.eclipse.kura.demo.opcua.server.i2c.GroveDigitalLightSensorAttributeDelegate;
-import org.eclipse.kura.gpio.GPIOService;
+import org.eclipse.kura.demo.opcua.analog.GrovePiAnalogOutSensor;
+import org.eclipse.kura.demo.opcua.server.digital.GrovePiDigitalInSensor;
+import org.eclipse.kura.demo.opcua.server.digital.GrovePiDigitalOutSensor;
+import org.eclipse.kura.demo.opcua.server.i2c.GroveDigitalLightSensor;
 import org.eclipse.milo.opcua.sdk.server.OpcUaServer;
 import org.eclipse.milo.opcua.sdk.server.api.config.OpcUaServerConfig;
 import org.eclipse.milo.opcua.sdk.server.nodes.UaFolderNode;
-import org.eclipse.milo.opcua.stack.core.Identifiers;
 import org.eclipse.milo.opcua.stack.core.UaException;
 import org.eclipse.milo.opcua.stack.core.application.DefaultCertificateManager;
 import org.eclipse.milo.opcua.stack.core.application.DefaultCertificateValidator;
 import org.eclipse.milo.opcua.stack.core.security.SecurityPolicy;
+import org.iot.raspberry.grovepi.GrovePi;
+import org.iot.raspberry.grovepi.dio.GrovePiDio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,28 +38,46 @@ public class DemoServerComponent implements ConfigurableComponent {
     private int port;
     private DemoNamespace namespace;
 
-    private GpioOutAttributeDelegate led;
-    private GpioOutAttributeDelegate buzzer;
-    private GroveDigitalLightSensorAttributeDelegate lightSensor;
+    private GrovePi grovePi;
 
-    private GPIOService gpioService;
-
-    public void setGpioService(GPIOService gpioService) {
-        this.gpioService = gpioService;
-    }
-
-    public void unsetGpioService(GPIOService gpioService) {
-        this.gpioService = null;
-    }
+    private HashSet<Sensor> sensors = new HashSet<>();
 
     public void activate(Map<String, Object> properties) {
         logger.info("activating...");
         try {
-            led = new GpioOutAttributeDelegate(18, gpioService);
-            buzzer = new GpioOutAttributeDelegate(17, gpioService);
-            lightSensor = new GroveDigitalLightSensorAttributeDelegate();
-        } catch (IOException e) {
-            logger.warn("failed initialize deivices", e);
+            logger.info("opening GrovePi");
+            grovePi = new GrovePiDio();
+            logger.info("opening GrovePi...done");
+
+        } catch (Exception e) {
+            logger.warn("failed initialize deivice", e);
+            return;
+        }
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            logger.warn("interrupted", e);
+        }
+
+        sensors.add(new GroveDigitalLightSensor("lightSensor"));
+        sensors.add(new GrovePiAnalogOutSensor("buzzer", 6, grovePi));
+        sensors.add(new GrovePiDigitalOutSensor("led", 4, grovePi));
+        sensors.add(new GrovePiDigitalInSensor("waterSensor", 2, grovePi));
+        sensors.add(new GrovePiDigitalOutSensor("fan", 3, grovePi));
+
+        Iterator<Sensor> it = sensors.iterator();
+
+        while (it.hasNext()) {
+            try {
+                Sensor sensor = it.next();
+                logger.info("initializing {}...", sensor.getName());
+                sensor.init();
+                logger.info("initializing {}...done", sensor.getName());
+            } catch (Exception e) {
+                logger.warn("failed to initialize sensor", e);
+                it.remove();
+            }
         }
 
         updated(properties);
@@ -96,19 +117,10 @@ public class DemoServerComponent implements ConfigurableComponent {
         this.server.getNamespaceManager().registerAndAdd(DemoNamespace.DEMO_NAMESPACE_URI,
                 index -> namespace = new DemoNamespace(server, index));
 
-        UaFolderNode gpioFolder = namespace.createFolder("gpio");
+        UaFolderNode sensorsFolder = namespace.createFolder("sensors");
 
-        if (led != null) {
-            namespace.addNode("gpio/led", gpioFolder, Identifiers.Boolean, led);
-        }
-        if (buzzer != null) {
-            namespace.addNode("gpio/buzzer", gpioFolder, Identifiers.Boolean, buzzer);
-        }
-
-        UaFolderNode i2cFolder = namespace.createFolder("i2c");
-
-        if (lightSensor != null) {
-            namespace.addNode("i2c/lightSensor", i2cFolder, Identifiers.Integer, lightSensor);
+        for (Sensor sensor : sensors) {
+            namespace.addNode(sensor.getName(), sensorsFolder, sensor.getDataType(), sensor);
         }
 
         this.server.startup().get();
@@ -117,18 +129,20 @@ public class DemoServerComponent implements ConfigurableComponent {
     public void deactivate() {
         logger.info("deactivating..");
         try {
-            if (led != null) {
-                led.shutdown();
-            }
-            if (buzzer != null) {
-                buzzer.shutdown();
-            }
-            if (lightSensor != null) {
-                lightSensor.shutdown();
-            }
             shutdownServer();
         } catch (Exception e) {
             logger.warn("failed to shutdown server", e);
         }
+
+        for (Sensor sensor : sensors) {
+            try {
+                logger.info("shutting down {}...", sensor.getName());
+                sensor.close();
+                logger.info("shutting down {}...done", sensor.getName());
+            } catch (Exception e) {
+                logger.warn("failed to shut down {}", sensor.getName());
+            }
+        }
+        sensors.clear();
     }
 }

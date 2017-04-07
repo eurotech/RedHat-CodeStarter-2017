@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/src/org/eclipse/kura/demo/opcua/analog/GrovePiAnalogInSensor.java">
+</file>
+<file name="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/src/org/eclipse/kura/demo/opcua/analog/GrovePiAnalogOutSensor.java">
+</file>
+<file name="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/src/org/eclipse/kura/demo/opcua/server/DemoNamespace.java">
+</file>
+<file name="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/src/org/eclipse/kura/demo/opcua/server/DemoServerComponent.java">
+</file>
+<file name="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/src/org/eclipse/kura/demo/opcua/server/digital/GrovePiDigitalInSensor.java">
+</file>
+<file name="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/src/org/eclipse/kura/demo/opcua/server/digital/GrovePiDigitalOutSensor.java">
+</file>
+<file name="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/src/org/eclipse/kura/demo/opcua/server/i2c/GroveDigitalLightSensor.java">
+</file>
+<file name="/Users/nicola.timeus/git/kura/kura/org.eclipse.kura.demo.opcua.server/src/org/eclipse/kura/demo/opcua/server/Sensor.java">
+</file>
+</checkstyle>
