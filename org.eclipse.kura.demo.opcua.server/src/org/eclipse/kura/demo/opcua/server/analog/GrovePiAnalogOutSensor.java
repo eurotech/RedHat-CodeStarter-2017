@@ -1,4 +1,4 @@
-package org.eclipse.kura.demo.opcua.analog;
+package org.eclipse.kura.demo.opcua.server.analog;
 
 import java.io.IOException;
 

@@ -20,13 +20,13 @@ public class GrovePiDigitalOutSensor extends Sensor {
 
     private static final Logger logger = LoggerFactory.getLogger(GrovePiDigitalOutSensor.class);
 
-    private boolean value;
+    private int value;
     private int digitalPort;
     private GroveDigitalOut digitalOut;
     private GrovePi grovePi;
 
     public GrovePiDigitalOutSensor(String name, int digitalPort, GrovePi grovePi) {
-        super(name, Identifiers.Boolean);
+        super(name, Identifiers.Integer);
         this.digitalPort = digitalPort;
         this.grovePi = grovePi;
     }
@@ -39,7 +39,7 @@ public class GrovePiDigitalOutSensor extends Sensor {
         } catch (InterruptedException e) {
             logger.warn("interrupted", e);
         }
-        this.digitalOut.set(value);
+        this.digitalOut.set(false);
     }
 
     @Override
@@ -55,8 +55,13 @@ public class GrovePiDigitalOutSensor extends Sensor {
     @Override
     public void setValue(AttributeContext context, VariableNode node, DataValue value) throws UaException {
         try {
-            boolean newValue = (Boolean) value.getValue().getValue();
-            digitalOut.set(newValue);
+            int newValue = (Integer) value.getValue().getValue();
+            
+            if (newValue == 0) {
+            digitalOut.set(false);
+            } else {
+            	digitalOut.set(true);
+            }
             this.value = newValue;
         } catch (Exception e) {
             logger.warn("excepion writing GrovePi+ Digital out" + digitalPort, e);

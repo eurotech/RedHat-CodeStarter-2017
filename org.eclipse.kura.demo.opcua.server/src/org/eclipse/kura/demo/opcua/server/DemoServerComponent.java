@@ -11,7 +11,6 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import org.eclipse.kura.configuration.ConfigurableComponent;
-import org.eclipse.kura.demo.opcua.analog.GrovePiAnalogOutSensor;
 import org.eclipse.kura.demo.opcua.server.digital.GrovePiDigitalInSensor;
 import org.eclipse.kura.demo.opcua.server.digital.GrovePiDigitalOutSensor;
 import org.eclipse.kura.demo.opcua.server.i2c.GroveDigitalLightSensor;
@@ -61,7 +60,7 @@ public class DemoServerComponent implements ConfigurableComponent {
         }
 
         sensors.add(new GroveDigitalLightSensor("lightSensor"));
-        sensors.add(new GrovePiAnalogOutSensor("buzzer", 6, grovePi));
+        sensors.add(new GrovePiDigitalOutSensor("buzzer", 6, grovePi));
         sensors.add(new GrovePiDigitalOutSensor("led", 4, grovePi));
         sensors.add(new GrovePiDigitalInSensor("waterSensor", 2, grovePi));
         sensors.add(new GrovePiDigitalOutSensor("fan", 3, grovePi));
@@ -144,5 +143,15 @@ public class DemoServerComponent implements ConfigurableComponent {
             }
         }
         sensors.clear();
+        
+        try {
+            if (grovePi != null) {
+                logger.info("shutting down grovepi...");
+                grovePi.close();
+                logger.info("shutting down grovepi...done");
+            }
+        } catch (Exception e) {
+            logger.warn("failed to shutdown grovepi", e);
+        }
     }
 }
