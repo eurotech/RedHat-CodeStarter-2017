@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project name="maven-antrun-" default="verify.jdeps"  >
-<target name="verify.jdeps">
-  <available file="jdeps" filepath="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" property="jdeps.present"/>
-</target>
-</project>

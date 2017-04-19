@@ -1,4 +1,0 @@
-digraph "summary" {
-  "org.eclipse.kura.demo.opcua.server-1.0.0-SNAPSHOT.jar" -> "not found";
-  "org.eclipse.kura.demo.opcua.server-1.0.0-SNAPSHOT.jar" -> "rt.jar (compact1)";
-}
