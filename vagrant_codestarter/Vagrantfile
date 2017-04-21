@@ -96,6 +96,11 @@ Vagrant.configure(2) do |config|
     tar -zxvf csuserv2.tar.gz
     rm csuserv2.tar.gz
 
+    cd /home/csuser/
+    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/hsql.tar.gz
+    tar -zxvf hsql.tar.gz
+    rm hsql.tar.gz
+
     cd /home/csuser/Desktop
     wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/DesktopLaunchers.tar.gz
     tar -zxvf DesktopLaunchers.tar.gz
