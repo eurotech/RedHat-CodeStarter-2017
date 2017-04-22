@@ -123,8 +123,13 @@ Vagrant.configure(2) do |config|
     rm -r vagrant
 
     cp /vagrant/snapshot_1492796409796.xml /home/csuser/workspace/codestarter_complete/kura/snapshots
+    sudo chown csuser -R /home/csuser/workspace/codestarter_complete/kura/snapshots/snapshot_1492796409796.xml
+    rm /home/csuser/workspace/codestarter/kura/snapshots/snapshot_1*
 
     mkdir -p /home/csuser/Desktop
+
+    mv *.desktop /home/csuser/Desktop
+
     cd /home/csuser/Desktop
     wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/DesktopLaunchers.tar.gz
     tar -zxvf DesktopLaunchers.tar.gz
