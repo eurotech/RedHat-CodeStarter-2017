@@ -52,7 +52,7 @@ Vagrant.configure(2) do |config|
      vb.gui = true
 
      # Customize the amount of memory on the VM:
-     vb.memory = "1024"
+     vb.memory = "2048"
    end
   #
   # View the documentation for the provider you are using for more
@@ -81,6 +81,7 @@ Vagrant.configure(2) do |config|
     echo summit2017! | passwd csuser --stdin
 
     sudo yum -y groupinstall "GNOME Desktop"
+    sudo yum -y remove libreoffice*
     sudo systemctl set-default graphical.target
     sudo systemctl start graphical.target
 
@@ -91,18 +92,41 @@ Vagrant.configure(2) do |config|
     sudo VBoxClient --seamless
 
     cd /home/csuser
-    #wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/csuser.tar.gz
-    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/csuserv2.tar.gz
-    tar -zxvf csuserv2.tar.gz
-    rm csuserv2.tar.gz
+    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/eclipse_install.tar.gz
+    tar -zxvf eclipse_install.tar.gz
+    rm eclipse_install.tar.gz
 
-    cd /home/csuser/
-    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/hsql.tar.gz
+    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/workspaces_install.tar.gz
+    tar -zxvf workspaces_install.tar.gz
+    rm workspaces_install.tar.gz
+
+    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/additional_elements.tar.gz
+    tar -zxvf additional_elements.tar.gz
+    rm additional_elements.tar.gz
+
+    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/hsql.tar.gz
     tar -zxvf hsql.tar.gz
     rm hsql.tar.gz
 
+    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/hsql_stuff.tar.gz
+    tar -zxvf hsql_stuff.tar.gz
+    rm hsql_stuff.tar.gz
+
+    sudo chown csuser -R vagrant
+    sudo chown csuser -R hsqldb.jar
+
+    mv vagrant/hsql_stuff/* .
+    mv vagrant/additional_elements/* .
+    mv vagrant/workspaces_install/* .
+    mv vagrant/eclipse_install/* .
+
+    rm -r vagrant
+
+    cp /vagrant/snapshot_1492796409796.xml /home/csuser/workspace/codestarter_complete/kura/snapshots
+
+    mkdir -p /home/csuser/Desktop
     cd /home/csuser/Desktop
-    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/DesktopLaunchers.tar.gz
+    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/DesktopLaunchers.tar.gz
     tar -zxvf DesktopLaunchers.tar.gz
     rm DesktopLaunchers.tar.gz
   SHELL
