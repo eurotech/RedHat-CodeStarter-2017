@@ -82,6 +82,35 @@ Vagrant.configure(2) do |config|
 
     sudo yum -y groupinstall "GNOME Desktop"
     sudo yum -y remove libreoffice*
+
+    sudo yum -y install git
+
+    wget https://github.com/openshift/origin/releases/download/v1.5.0/openshift-origin-client-tools-v1.5.0-031cbe4-linux-64bit.tar.gz
+    tar -zxvf openshift-origin-client-tools-v1.5.0-031cbe4-linux-64bit.tar.gz
+    cd openshift-origin-client-tools-v1.5.0-031cbe4-linux-64bit
+    sudo mv oc /usr/bin/
+    cd ..
+    rm -r openshift-origin-client-tools-v1.5.0-031cbe4-linux-64bit
+
+    sudo yum -y remove java-1.7.0-openjdk*
+    sudo yum -y install java-1.8.0-openjdk-devel
+    sudo rm /etc/profile.d/java.sh
+    touch /etc/profile.d/java.sh
+    cp /vagrant/maven.sh /etc/profile.d/java.sh
+
+    sudo curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+    sudo yum -y install nodejs
+
+    cd /home/csuser
+    sudo rm /opt/maven
+    wget http://apache.panu.it/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+    tar xzf apache-maven-3.5.0-bin.tar.gz
+    rm apache-maven-3.5.0-bin.tar.gz
+    sudo ln -s /home/csuser/apache-maven-3.5.0 /opt/maven
+    sudo rm /etc/profile.d/maven.sh
+    touch /etc/profile.d/maven.sh
+    cp /vagrant/maven.sh /etc/profile.d/maven.sh
+
     sudo systemctl set-default graphical.target
     sudo systemctl start graphical.target
 
@@ -115,6 +144,10 @@ Vagrant.configure(2) do |config|
     sudo chown csuser -R vagrant
     sudo chown csuser -R hsqldb.jar
 
+    rm -r hsql_stuff
+    rm -r additional_elements
+    rm -r workspaces_install
+    rm -r eclipse_install
     mv vagrant/hsql_stuff/* .
     mv vagrant/additional_elements/* .
     mv vagrant/workspaces_install/* .
