@@ -96,7 +96,7 @@ Vagrant.configure(2) do |config|
     sudo yum -y install java-1.8.0-openjdk-devel
     sudo rm /etc/profile.d/java.sh
     touch /etc/profile.d/java.sh
-    cp /vagrant/maven.sh /etc/profile.d/java.sh
+    cp /vagrant/java.sh /etc/profile.d/java.sh
 
     sudo curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
     sudo yum -y install nodejs
