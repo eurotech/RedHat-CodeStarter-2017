@@ -111,6 +111,8 @@ Vagrant.configure(2) do |config|
     touch /etc/profile.d/maven.sh
     cp /vagrant/maven.sh /etc/profile.d/maven.sh
 
+    sudo yum -y install https://github.com/atom/atom/releases/download/v1.16.0/atom.x86_64.rpm
+
     sudo systemctl set-default graphical.target
     sudo systemctl start graphical.target
 
