@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?><esf:configurations xmlns:esf="http://eurotech.com/esf/2.0" xmlns:ocd="http://www.osgi.org/xmlns/metatype/v1.2.0">
+    <esf:configuration pid="org.eclipse.kura.core.data.transport.mqtt.MqttDataTransport">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="ssl.default.protocol" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="in-flight.persistence" type="String">
+                <esf:value>file</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="clean-session" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="lwt.retain" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="protocol-version" type="Integer">
+                <esf:value>4</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.core.data.transport.mqtt.MqttDataTransport</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="timeout" type="Integer">
+                <esf:value>20</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.core.data.transport.mqtt.MqttDataTransport</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.core.data.transport.mqtt.MqttDataTransport-1493319645902-0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="ssl.default.cipherSuites" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="broker-url" type="String">
+                <esf:value>mqtt://master1.codestarter.rhiot.org:31883/</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="true" name="password" type="Password">
+                <esf:value>V2UhY29tZTEyMzQ1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="keep-alive" type="Integer">
+                <esf:value>30</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="ssl.certificate.alias" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="topic.context.account-name" type="String">
+                <esf:value>Eurotech</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="lwt.topic" type="String">
+                <esf:value>$EDC/#account-name/#client-id/MQTT/LWT</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="lwt.payload" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="lwt.qos" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="ssl.hostname.verification" type="String">
+                <esf:value>use-ssl-service-config</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.cloud.service.factory.pid" type="String">
+                <esf:value>org.eclipse.kura.core.cloud.factory.DefaultCloudServiceFactory</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="client-id" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="username" type="String">
+                <esf:value>Eurotech-VM</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.clock.ClockService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="clock.ntp.host" type="String">
+                <esf:value>0.pool.ntp.org</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="clock.ntp.port" type="Integer">
+                <esf:value>123</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="clock.provider" type="String">
+                <esf:value>java-ntp</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="clock.ntp.refresh-interval" type="Integer">
+                <esf:value>3600</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="clock.set.hwclock" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="clock.ntp.timeout" type="Integer">
+                <esf:value>10000</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.clock.ClockService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.clock.ClockService</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.demo.opcua.server.DemoServerComponent">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="server.port" type="Integer">
+                <esf:value>1234</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.demo.opcua.server.DemoServerComponent</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.demo.opcua.server.DemoServerComponent</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.position.PositionService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="baudRate" type="Integer">
+                <esf:value>115200</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="bitsPerWord" type="Integer">
+                <esf:value>8</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="port" type="String">
+                <esf:value>1-3.2</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="stopBits" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="parity" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="useGpsd" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="enabled" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.position.PositionService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.position.PositionService</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.camel.xml.XmlRouterComponent">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="component.prereqs" type="String">
+                <esf:value>kura-cloud</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="xml.data" type="String">
+                <esf:value>&lt;routes xmlns="http://camel.apache.org/schema/spring"&gt;
+  &lt;route id="route1"&gt;
+         &lt;from uri="kura-cloud:myapp/xmltopic"/&gt;
+         &lt;to uri="log:MESSAGE_FROM_CLOUD"/&gt;
+     &lt;/route&gt;
+ &lt;/routes&gt;</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="disableJmx" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="cloudService.prereqs" type="String">
+                <esf:value>cloud=org.eclipse.kura.cloud.CloudService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.camel.xml.XmlRouterComponent</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.camel.xml.XmlRouterComponent</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="opcuaAsset">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="LED#node.id" type="String">
+                <esf:value>led</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="FAN#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="BUZZER#node.namespace.index" type="Integer">
+                <esf:value>2</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="TEMPERATURE#node.id" type="String">
+                <esf:value>temperatureSensor</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="TEMPERATURE#+type" type="String">
+                <esf:value>READ</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="BUZZER#+value.type" type="String">
+                <esf:value>INTEGER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="WATER#+type" type="String">
+                <esf:value>READ</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="TEMPERATURE#node.namespace.index" type="Integer">
+                <esf:value>2</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="FAN#node.namespace.index" type="Integer">
+                <esf:value>2</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.WireAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="WATER#node.id" type="String">
+                <esf:value>waterSensor</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LIGHT#node.id" type="String">
+                <esf:value>lightSensor</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="component.id" type="Long">
+                <esf:value>48</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="BUZZER#node.id" type="String">
+                <esf:value>buzzer</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="WATER#node.namespace.index" type="Integer">
+                <esf:value>2</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="TEMPERATURE#+value.type" type="String">
+                <esf:value>DOUBLE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="driver.pid" type="String">
+                <esf:value>opcuaDriver</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="component.name" type="String">
+                <esf:value>org.eclipse.kura.wire.WireAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LIGHT#+type" type="String">
+                <esf:value>READ</esf:value>
+            </esf:property>
+            <esf:property array="true" encrypted="false" name="objectClass" type="String">
+                <esf:value>org.eclipse.kura.asset.Asset</esf:value>
+                <esf:value>org.eclipse.kura.wire.WireComponent</esf:value>
+                <esf:value>org.eclipse.kura.wire.WireEmitter</esf:value>
+                <esf:value>org.eclipse.kura.wire.WireReceiver</esf:value>
+                <esf:value>org.osgi.service.wireadmin.Producer</esf:value>
+                <esf:value>org.osgi.service.wireadmin.Consumer</esf:value>
+                <esf:value>org.eclipse.kura.configuration.SelfConfiguringComponent</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED#node.namespace.index" type="Integer">
+                <esf:value>2</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED#+value.type" type="String">
+                <esf:value>INTEGER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="FAN#node.id" type="String">
+                <esf:value>fan</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.WireAsset-1493320881791-27</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>opcuaAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="FAN#+value.type" type="String">
+                <esf:value>INTEGER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="BUZZER#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="WATER#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="asset.desc" type="String">
+                <esf:value>Sample Asset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LIGHT#node.namespace.index" type="Integer">
+                <esf:value>2</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LIGHT#+value.type" type="String">
+                <esf:value>INTEGER</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="logger">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="log.verbosity" type="String">
+                <esf:value>VERBOSE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.Logger</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>logger</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.Logger-1493319646179-2</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="LEDCONTROLLER">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="cache.expiration.interval" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.DbWireRecordFilter</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="sql.view" type="String">
+                <esf:value>SELECT CASE WHEN LIGHT &lt; 200 THEN 1 ELSE 0 END AS LED FROM "WR_data"  ORDER BY TIMESTAMP DESC LIMIT 1;</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>LEDCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.DbWireRecordFilter-1493320881309-22</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="FANCONTROLLER">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="cache.expiration.interval" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.DbWireRecordFilter</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="sql.view" type="String">
+                <esf:value>SELECT CASE WHEN ((TEMPERATURE &gt; 25) AND (WATER=true)) THEN 1 ELSE 0 END  AS FAN FROM "WR_data" ORDER BY TIMESTAMP DESC LIMIT 1;</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>FANCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.DbWireRecordFilter-1493320473783-12</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="store">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="table.name" type="String">
+                <esf:value>WR_data</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="maximum.table.size" type="Integer">
+                <esf:value>10000</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="cleanup.records.keep" type="Integer">
+                <esf:value>5000</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.DbWireRecordStore</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>store</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.DbWireRecordStore-1493320473754-11</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.watchdog.WatchdogService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="pingInterval" type="Integer">
+                <esf:value>10000</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="enabled" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.watchdog.WatchdogService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.watchdog.WatchdogService</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.cloud.CloudService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="topic.control-prefix" type="String">
+                <esf:value>$EDC</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="birth.cert.policy" type="String">
+                <esf:value>birth-connect-reconnect</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="device.display-name" type="String">
+                <esf:value>Kura Emulator</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="payload.encoding" type="String">
+                <esf:value>kura-protobuf</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="republish.mqtt.birth.cert.on.modem.detect" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.cloud.CloudService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.cloud.CloudService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.cloud.CloudService-1493319646208-3</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="enable.default.subscriptions" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="republish.mqtt.birth.cert.on.gps.lock" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="encode.gzip" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="DataService.target" type="String">
+                <esf:value>(kura.service.pid=org.eclipse.kura.data.DataService)</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.cloud.service.factory.pid" type="String">
+                <esf:value>org.eclipse.kura.core.cloud.factory.DefaultCloudServiceFactory</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="timer">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="simple.interval" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="simple.time.unit" type="String">
+                <esf:value>SECONDS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="type" type="String">
+                <esf:value>SIMPLE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.Timer</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="cron.interval" type="String">
+                <esf:value>0/10 * * * * ?</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>timer</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.Timer-1493319646244-4</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.data.DataService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="store.purge-age" type="Integer">
+                <esf:value>60</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="in-flight-messages.congestion-timeout" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="in-flight-messages.max-number" type="Integer">
+                <esf:value>9</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.data.DataService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="disconnect.quiesce-timeout" type="Integer">
+                <esf:value>10</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.data.DataService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.data.DataService-1493319646251-5</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="store.housekeeper-interval" type="Integer">
+                <esf:value>60</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="connect.auto-on-startup" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="DataTransportService.target" type="String">
+                <esf:value>(kura.service.pid=org.eclipse.kura.core.data.transport.mqtt.MqttDataTransport)</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="connect.retry-interval" type="Integer">
+                <esf:value>60</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.cloud.service.factory.pid" type="String">
+                <esf:value>org.eclipse.kura.core.cloud.factory.DefaultCloudServiceFactory</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="in-flight-messages.republish-on-new-session" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="store.capacity" type="Integer">
+                <esf:value>1000</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.wire.WireService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="5.emitter" type="String">
+                <esf:value>timer</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="wiregraph" type="String">
+                <esf:value>{"0":{"pid":"opcuaAsset","loc":"440,140","driver":"opcuaDriver","fpid":"org.eclipse.kura.wire.WireAsset","type":"both"},"1":{"pid":"logger","loc":"720,140","driver":"null","fpid":"org.eclipse.kura.wire.Logger","type":"consumer"},"2":{"pid":"timer","loc":"20,140","driver":"null","fpid":"org.eclipse.kura.wire.Timer","type":"producer"},"3":{"pid":"publisher","loc":"720,60","driver":"null","fpid":"org.eclipse.kura.wire.CloudPublisher","type":"consumer"},"4":{"pid":"store","loc":"720,220","fpid":"org.eclipse.kura.wire.DbWireRecordStore","type":"both"},"5":{"pid":"FANCONTROLLER","loc":"200,60","fpid":"org.eclipse.kura.wire.DbWireRecordFilter","type":"both"},"6":{"pid":"BUZZERCONTROLLER","loc":"200,140","fpid":"org.eclipse.kura.wire.DbWireRecordFilter","type":"both"},"7":{"pid":"LEDCONTROLLER","loc":"200,220","fpid":"org.eclipse.kura.wire.DbWireRecordFilter","type":"both"}}</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="2.receiver" type="String">
+                <esf:value>opcuaAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="4.emitter" type="String">
+                <esf:value>opcuaAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="5.receiver" type="String">
+                <esf:value>FANCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="7.emitter" type="String">
+                <esf:value>LEDCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="8.receiver" type="String">
+                <esf:value>BUZZERCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="6.emitter" type="String">
+                <esf:value>opcuaAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="1.emitter" type="String">
+                <esf:value>BUZZERCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="component.id" type="Long">
+                <esf:value>16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="2.emitter" type="String">
+                <esf:value>FANCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="3.emitter" type="String">
+                <esf:value>opcuaAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="7.receiver" type="String">
+                <esf:value>opcuaAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="component.name" type="String">
+                <esf:value>org.eclipse.kura.wire.WireService</esf:value>
+            </esf:property>
+            <esf:property array="true" encrypted="false" name="objectClass" type="String">
+                <esf:value>org.eclipse.kura.configuration.SelfConfiguringComponent</esf:value>
+                <esf:value>org.eclipse.kura.wire.WireService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="1.receiver" type="String">
+                <esf:value>opcuaAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="4.receiver" type="String">
+                <esf:value>publisher</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.WireService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.WireService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="6.receiver" type="String">
+                <esf:value>logger</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="3.receiver" type="String">
+                <esf:value>store</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="9.receiver" type="String">
+                <esf:value>LEDCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="8.emitter" type="String">
+                <esf:value>timer</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="9.emitter" type="String">
+                <esf:value>timer</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.web.Console">
+        <esf:properties>
+            <esf:property array="false" encrypted="true" name="console.password.value" type="Password">
+                <esf:value>YWRtaW4=</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="console.username.value" type="String">
+                <esf:value>admin</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.web.Console</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.web.Console</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="BUZZERCONTROLLER">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="cache.expiration.interval" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.DbWireRecordFilter</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="sql.view" type="String">
+                <esf:value>SELECT CASE WHEN WATER = false THEN 1 ELSE 0 END AS BUZZER FROM "WR_data"  ORDER BY TIMESTAMP DESC LIMIT 1;</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>BUZZERCONTROLLER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.DbWireRecordFilter-1493320766884-21</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="publisher">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="publish.topic" type="String">
+                <esf:value>A1/$assetName</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="publish.application" type="String">
+                <esf:value>W1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="publish.priority" type="Integer">
+                <esf:value>7</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="publish.qos" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="cloud.service.pid" type="String">
+                <esf:value>org.eclipse.kura.cloud.CloudService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="publish.control.messages" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.CloudPublisher</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="publish.retain" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>publisher</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.wire.CloudPublisher-1493319646292-6</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.ssl.SslManagerService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="ssl.default.protocol" type="String">
+                <esf:value>TLSv1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="ssl.default.trustStore" type="String">
+                <esf:value>/opt/eclipse/security/cacerts</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="true" name="ssl.keystore.password" type="Password">
+                <esf:value>Y2hhbmdlaXQ=</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="ssl.hostname.verification" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.ssl.SslManagerService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.ssl.SslManagerService</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.cloud.app.command.CommandCloudApp">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="command.enable" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="command.timeout" type="Integer">
+                <esf:value>60</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.cloud.app.command.CommandCloudApp</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.cloud.app.command.CommandCloudApp</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="opcuaDriver">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="security.policy" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="keystore.client.alias" type="String">
+                <esf:value>client-ai</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="server.name" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="session.timeout" type="Integer">
+                <esf:value>120</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="true" name="keystore.password" type="Password">
+                <esf:value>cGFzc3dvcmQ=</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="certificate.location" type="String">
+                <esf:value>PFX or JKS Keystore</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="endpoint.ip" type="String">
+                <esf:value>127.0.0.1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.driver.opcua</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="keystore.server.alias" type="String">
+                <esf:value>server-ai</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>opcuaDriver</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.driver.opcua-1493319646329-7</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="keystore.type" type="String">
+                <esf:value>PKCS12</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="application.uri" type="String">
+                <esf:value>urn:kura:opcua:client</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="endpoint.port" type="Integer">
+                <esf:value>1234</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="request.timeout" type="Integer">
+                <esf:value>60</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="application.name" type="String">
+                <esf:value>opc-ua client</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="username" type="String">
+                <esf:value/>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+</esf:configurations>

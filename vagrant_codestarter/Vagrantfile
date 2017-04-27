@@ -123,13 +123,18 @@ Vagrant.configure(2) do |config|
     sudo VBoxClient --seamless
 
     cd /home/csuser
+    rm -r hsql_stuff
+    rm -r additional_elements
+    rm -r workspace
+    rm -r eclipse_install
+
     wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/eclipse_install.tar.gz
     tar -zxvf eclipse_install.tar.gz
     rm eclipse_install.tar.gz
 
-    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/workspaces_install.tar.gz
-    tar -zxvf workspaces_install.tar.gz
-    rm workspaces_install.tar.gz
+    wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/workspacev3.tar.gz
+    tar -zxvf workspacev3.tar.gz
+    rm workspacev3.tar.gz
 
     wget https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vm-contents/additional_elements.tar.gz
     tar -zxvf additional_elements.tar.gz
@@ -146,23 +151,19 @@ Vagrant.configure(2) do |config|
     sudo chown csuser -R vagrant
     sudo chown csuser -R hsqldb.jar
 
-    rm -r hsql_stuff
-    rm -r additional_elements
-    rm -r workspaces_install
-    rm -r eclipse_install
     mv vagrant/hsql_stuff/* .
     mv vagrant/additional_elements/* .
-    mv vagrant/workspaces_install/* .
     mv vagrant/eclipse_install/* .
 
     rm -r vagrant
 
-    cp /vagrant/snapshot_1492796409796.xml /home/csuser/workspace/codestarter_complete/kura/snapshots
-    sudo chown csuser -R /home/csuser/workspace/codestarter_complete/kura/snapshots/snapshot_1492796409796.xml
+    rm /home/csuser/workspace/codestarter_complete/kura/snapshots/snapshot_*
+    cp /vagrant/snapshot_1493321519746.xml /home/csuser/workspace/codestarter_complete/kura/snapshots
+    sudo chown csuser -R /home/csuser/workspace/codestarter_complete/kura/snapshots/snapshot_1493321519746.xml
     rm /home/csuser/workspace/codestarter/kura/snapshots/snapshot_1*
 
     mkdir -p /home/csuser/Desktop
-
+    sudo chown csuser -R /home/csuser/Desktop
     mv *.desktop /home/csuser/Desktop
 
     cd /home/csuser/Desktop
