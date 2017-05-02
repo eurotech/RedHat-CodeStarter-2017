@@ -14,7 +14,7 @@ import org.eclipse.kura.configuration.ConfigurableComponent;
 import org.eclipse.kura.demo.opcua.server.digital.GrovePiDigitalInSensor;
 import org.eclipse.kura.demo.opcua.server.digital.GrovePiDigitalOutSensor;
 import org.eclipse.kura.demo.opcua.server.i2c.GroveDigitalLightSensor;
-import org.eclipse.kura.demo.opcua.server.i2c.GroveTemperatureSensor;
+import org.eclipse.kura.demo.opcua.server.i2c.GroveTemperatureSensorDIO;
 import org.eclipse.milo.opcua.sdk.server.OpcUaServer;
 import org.eclipse.milo.opcua.sdk.server.api.config.OpcUaServerConfig;
 import org.eclipse.milo.opcua.sdk.server.nodes.UaFolderNode;
@@ -60,7 +60,8 @@ public class DemoServerComponent implements ConfigurableComponent {
             logger.warn("interrupted", e);
         }
 
-        sensors.add(new GroveTemperatureSensor("temperatureSensor"));
+        sensors.add(new GroveTemperatureSensorDIO("temperatureSensor"));
+        //sensors.add(new GroveTemperatureSensor("temperatureSensor"));
         sensors.add(new GroveDigitalLightSensor("lightSensor"));
         sensors.add(new GrovePiDigitalOutSensor("buzzer", 6, grovePi));
         sensors.add(new GrovePiDigitalOutSensor("led", 4, grovePi));
@@ -70,8 +71,8 @@ public class DemoServerComponent implements ConfigurableComponent {
         Iterator<Sensor> it = sensors.iterator();
 
         while (it.hasNext()) {
+            Sensor sensor = it.next();
             try {
-                Sensor sensor = it.next();
                 logger.info("initializing {}...", sensor.getName());
                 sensor.init();
                 logger.info("initializing {}...done", sensor.getName());
