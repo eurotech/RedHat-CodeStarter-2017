@@ -20,7 +20,11 @@ public class GroveDigitalLightSensor extends Sensor {
 
     private static final Logger logger = LoggerFactory.getLogger(GroveDigitalLightSensor.class);
     private static final byte DEVICE_ADDRESS = 0x29;
+    private static final int REFRESH_INTERVAL = 2000;
 
+    private long lastRead = 0L;
+	private int lastReadVal;
+	
     private I2CDevice device;
 
     public GroveDigitalLightSensor(String name) {
@@ -44,7 +48,9 @@ public class GroveDigitalLightSensor extends Sensor {
 
     @Override
     public DataValue getValue(AttributeContext context, VariableNode node) throws UaException {
-        try {
+    	long currentTime = System.currentTimeMillis();
+		if (currentTime - lastRead >= REFRESH_INTERVAL) {
+    	try {
             int L0, H0, L1, H1;
 
             device.write(0x8C);
@@ -64,11 +70,17 @@ public class GroveDigitalLightSensor extends Sensor {
             H1 = device.read();
             int ch0 = (((H0 & 0xff) * 0x100) + L0) & 0xffff;
             int ch1 = (((H1 & 0xff) * 0x100) + L1) & 0xffff;
+            
+            lastReadVal = calculateLux(ch0, ch1);
+			lastRead = currentTime;
 
-            return new DataValue(new Variant(calculateLux(ch0, ch1)));
+            return new DataValue(new Variant(lastReadVal));
         } catch (Exception e) {
             throw new UaException(e);
         }
+		} else {
+			return new DataValue(new Variant(lastReadVal));
+		}
     }
 
     public int calculateLux(int ch0, int ch1) {
