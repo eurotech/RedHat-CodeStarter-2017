@@ -3,6 +3,8 @@
 This repository contains all the projects and dependencies needed to create the .dp file that has to be installed in the Raspberry Pi.
 
 ## Get Started:
+Download the Presentation at: https://goo.gl/ZOE9cF 
+
 On your host PC:
  - Install Virtual Box from here: https://www.virtualbox.org/wiki/Downloads selecting the proper distribution, depending on your host operating system and architecture;
  - Download the CodeStarter VM from here: https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/vagrant_codestarter_default_v3.ova
