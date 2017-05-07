@@ -3,7 +3,8 @@
 This repository contains all the projects and dependencies needed to create the .dp file that has to be installed in the Raspberry Pi.
 
 ## Get Started:
-Download the Presentation at: https://goo.gl/ZOE9cF 
+Download the Presentation at: https://goo.gl/ZOE9cF
+The BOM to buy and create your own Kit is available here: https://www.seeed.cc/RedHat%20Summit%202017%20-%20Codestarter%20BOM-p-2041.html
 
 On your host PC:
  - Install Virtual Box from here: https://www.virtualbox.org/wiki/Downloads selecting the proper distribution, depending on your host operating system and architecture;
