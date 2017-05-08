@@ -4,7 +4,14 @@ This repository contains all the projects and dependencies needed to create the 
 
 ## Get Started:
 Download the Presentation at: https://goo.gl/ZOE9cF
-The BOM to buy and create your own Kit is available here: https://www.seeed.cc/RedHat%20Summit%202017%20-%20Codestarter%20BOM-p-2041.html
+
+Use the following list to procure the needed components:
+
+| Component Name          | Quantity      | Link                                                           |
+| ----------------------- | ------------- | -------------------------------------------------------------- |
+| RaspberryPi 3           | 1             | https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html |
+| Micro SD 16GB Class 10  | 1             | https://www.amazon.com/SanDisk-Ultra-Micro-Adapter-SDSQUNC-016G-GN6MA/dp/B010Q57SEE/ref=sr_1_3?ie=UTF8&qid=1494264720&sr=8-3&keywords=micro+sd+16gb+class+10 |
+| Micro USB Cable         | 1             | https://www.seeedstudio.com/Micro-USB-Cable-48cm-p-1475.html |
 
 On your host PC:
  - Install Virtual Box from here: https://www.virtualbox.org/wiki/Downloads selecting the proper distribution, depending on your host operating system and architecture;
