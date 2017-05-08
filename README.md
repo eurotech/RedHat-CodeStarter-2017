@@ -12,6 +12,15 @@ Use the following list to procure the needed components:
 | RaspberryPi 3           | 1             | https://www.seeedstudio.com/Raspberry-Pi-3-Model-B-p-2625.html |
 | Micro SD 16GB Class 10  | 1             | https://www.amazon.com/SanDisk-Ultra-Micro-Adapter-SDSQUNC-016G-GN6MA/dp/B010Q57SEE/ref=sr_1_3?ie=UTF8&qid=1494264720&sr=8-3&keywords=micro+sd+16gb+class+10 |
 | Micro USB Cable         | 1             | https://www.seeedstudio.com/Micro-USB-Cable-48cm-p-1475.html |
+| GrovePi+                | 1             | https://www.seeedstudio.com/GrovePi+-p-2241.html |
+| Grove - Red LED         | 1             | https://www.seeedstudio.com/Grove-Red-LED-p-1142.html |
+| Grove - Buzzer          | 1             | https://www.seeedstudio.com/Grove-Buzzer-p-768.html |
+| Grove - Digital Light Sensor               | 1             | https://www.seeedstudio.com/Grove-Digital-Light-Sensor-p-1281.html |
+| Grove - Water Sensor                | 1             | https://www.seeedstudio.com/Grove-Water-Sensor-p-748.html |
+| Grove - Mini Fan v1.1                | 1             | https://www.seeedstudio.com/Grove-Mini-Fan-v1.1-p-2685.html |
+| Grove - Temperature&Humidity Sensor (SHT31)              | 1             | https://www.seeedstudio.com/Grove-Temperature&amp;Humidity-Sensor-(SHT31)-p-2655.html |
+| Grove - Blue Wrapper 1*1(4 PCS pack) | 1             | https://www.seeedstudio.com/Grove-Blue-Wrapper-1*1(4-PCS-pack)-p-2580.html |
+| Grove - Blue Wrapper 1*2(4 PCS pack) | 1             | https://www.seeedstudio.com/Grove-Blue-Wrapper-1*2(4-PCS-pack)-p-2583.html |
 
 On your host PC:
  - Install Virtual Box from here: https://www.virtualbox.org/wiki/Downloads selecting the proper distribution, depending on your host operating system and architecture;
