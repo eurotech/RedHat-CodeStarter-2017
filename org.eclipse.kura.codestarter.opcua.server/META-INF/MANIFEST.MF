@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1493728341352
+Bnd-LastModified: 1494410949226
 Build-Jdk: 1.8.0_121
 Built-By: matteo.maiero
 Bundle-ClassPath: lib/annotations-2.0.1.jar,lib/guava-19.0.jar,lib/javas
