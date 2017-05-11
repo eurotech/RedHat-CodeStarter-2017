@@ -42,7 +42,8 @@ Use the following list to procure the needed components:
 
 - Start the Raspberry Pi
 - Access the Kura Web Ui in the Raspberry Pi by accessing, with your browser the address: http://<your-raspberry-ip>/kura
-- Select the Packages tab and install the codestarter.opcua.dp available in the org.eclipse.kura.codestarter.opcua.server package
+- Select the Packages tab and remove any existing bundle already installed.
+- Install the codestarter.opcua.dp available in the org.eclipse.kura.codestarter.opcua.server package by loading it from your web browser.
 
 You can also recompile the org.eclipse.kura.codestarter.opcua.server project by following the next steps:
 - Clone this CodeStarter repository. The repository is composed by:
