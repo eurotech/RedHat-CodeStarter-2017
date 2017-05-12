@@ -41,9 +41,6 @@ Use the following list to procure the needed components:
 | Grove - Temperature&Humidity Sensor (SHT31)              | I2C-1             |
 
 - Start the Raspberry Pi
-- Access the Kura Web Ui in the Raspberry Pi by accessing, with your browser the address: http://<your-raspberry-ip>/kura
-- Select the Packages tab and remove any existing bundle already installed.
-- Install the codestarter.opcua.dp available in the org.eclipse.kura.codestarter.opcua.server package by loading it from your web browser.
 
 You can also recompile the org.eclipse.kura.codestarter.opcua.server project by following the next steps:
 - Clone this CodeStarter repository. The repository is composed by:
@@ -53,9 +50,15 @@ You can also recompile the org.eclipse.kura.codestarter.opcua.server project by 
 
   Building from source will require only to invoke **mvn clean install** from the root folder. This will trigger the building of all the dependencies and projects in this repository.
   A jar and a dp file will be available in the org.eclipse.kura.codestarter.opcua.server target folder. 
+At this point you can:
+
+- Access the Kura Web Ui in the Raspberry Pi by accessing, with your browser the address: http://<your-raspberry-ip>/kura
+- Select the Packages tab and remove any existing bundle already installed.
+- Install the codestarter.opcua.dp available in the org.eclipse.kura.codestarter.opcua.server package by loading it from your web browser.
 
 ### Start the VM and test the emulated environment
 At this point you can start your VM and, following the slides, create your own Wire graph experimenting with the simulated PLC running in your VM.
 
 ### Test the graph with your hardware PLC
 When done with the simulated environment, you can test your graph with the Raspberry Pi and the connected sensors. In order to do so, what you need to perform is to access the Kura Web Ui in your VM. In the left menu select the OPC-UA Driver you created in slide 32, modify the **endpoint.ip** value changing it from **127.0.0.1** to the IP of your Raspberry Pi. _A stop and restart of the VM Kura instance may be required._
+
