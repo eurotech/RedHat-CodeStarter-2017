@@ -28,7 +28,7 @@ Use the following list to procure the needed components:
  - Start your Virtual Box installation and import the downloaded VM image by selecting the Import Appliance option from the File menu. When importing, please remember to reset the VM MAC address by clicking on the proper option;
 
 ### On your Raspberry Pi:
-- Download the Raspberry Pi system image from here: https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/codestarter-rpi.img.xz and use dd or any other equivalent tool to flash the Raspberry Pi’s SD card.
+- Download the Raspberry Pi system image from here: https://s3-us-west-2.amazonaws.com/kura-repo/RedHatSummit/raspberry_codestarter_v2.img.bz2 and use dd or any other equivalent tool to flash the Raspberry Pi’s SD card.
 - Connect the sensors and actuators following what described in the following table:
 
 | Component Name          | GrovePi+ Connector      |
