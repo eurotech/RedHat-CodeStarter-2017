@@ -50,6 +50,7 @@ You can also recompile the org.eclipse.kura.codestarter.opcua.server project by 
 
   Building from source will require only to invoke **mvn clean install** from the root folder. This will trigger the building of all the dependencies and projects in this repository.
   A jar and a dp file will be available in the org.eclipse.kura.codestarter.opcua.server target folder. 
+
 At this point you can:
 
 - Access the Kura Web Ui in the Raspberry Pi by accessing, with your browser the address: http://<your-raspberry-ip>/kura
